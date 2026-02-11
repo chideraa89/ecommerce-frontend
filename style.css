@@ -1,0 +1,1067 @@
+@import url('http://fonts.googleapis.com/css2?family=wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan',sans-serif;
+}
+
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+
+h2{
+    font-size: 46px;
+    line-height: 64px;
+    color: #222;
+}
+
+h4{
+    font-size: 20px;
+    line-height: 64px;
+    color: #222;
+}
+h6{
+    font-size: 12px;
+    font-weight: 700;
+}
+p{
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+.section-p1{
+    padding: 40px 80px;
+}
+
+.section-m1{
+    margin: 40px 0;
+}
+body{
+    width: 100%;
+    height: 50%;
+}
+button.normal{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+/* Reset and base styles */
+#header * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Section */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+/* Logo */
+.images .logo {
+    height: 50px;
+    width: auto;
+    max-width: 150px;
+}
+
+/* Desktop Navigation */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+#navbar li {
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+/* Mobile menu (hidden by default) */
+#mobile {
+    display: none;
+    align-items: center;
+}
+
+#mobile a,
+#mobile i {
+    color: #1a1a1a;
+    font-size: 24px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/* Close button in mobile menu - Hidden on desktop */
+#close {
+    display: none;
+}
+
+/* Tablet Devices (768px and below) */
+@media (max-width: 768px) {
+    #header {
+        padding: 15px 20px;
+    }
+    
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #fff;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 40px 0 40px;
+        transition: 0.3s;
+    }
+    
+    #navbar.active {
+        right: 0;
+    }
+    
+    #navbar li {
+        margin-bottom: 25px;
+        width: 100%;
+    }
+    
+    #navbar li a {
+        font-size: 18px;
+        display: block;
+        padding: 8px 0;
+    }
+    
+    /* Position the close button separately */
+    #close-li {
+        position: absolute !important;
+        top: 20px;
+        right: 20px;
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+        width: auto !important;
+    }
+    
+    #close {
+        display: block;
+        font-size: 28px;
+        color: #222;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+    
+    /* Hide cart icon from navbar on mobile */
+    #lg-bag {
+        display: none;
+    }
+    
+    /* Show mobile menu */
+    #mobile {
+        display: flex;
+    }
+    
+    .images .logo {
+        height: 40px;
+    }
+}
+
+/* Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+    #header {
+        padding: 12px 15px;
+    }
+    
+    #navbar {
+        width: 100%;
+        right: -100%;
+        padding: 80px 30px 0 30px;
+    }
+    
+    #navbar.active {
+        right: 0;
+    }
+    
+    /* Adjust close button position for smaller screens */
+    #close-li {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .images .logo {
+        height: 35px;
+    }
+    
+    #mobile a,
+    #mobile i {
+        font-size: 22px;
+        margin-left: 15px;
+    }
+}
+
+/* Small Mobile Devices (360px and below) */
+@media (max-width: 360px) {
+    #header {
+        padding: 10px 12px;
+    }
+    
+    #navbar {
+        padding: 80px 20px 0 20px;
+    }
+    
+    /* Adjust close button position for very small screens */
+    #close-li {
+        top: 10px;
+        right: 10px;
+    }
+    
+    #close {
+        font-size: 24px;
+        padding: 8px;
+    }
+    
+    .images .logo {
+        height: 30px;
+    }
+    
+    #mobile a,
+    #mobile i {
+        font-size: 20px;
+        margin-left: 12px;
+    }
+}
+/*home page*/
+
+#hero {
+    background-image: url("images/picture1-removebg-preview.png");
+    height: 90vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: right 30vh top 9vh;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    animation: fadeInImage 1.5s ease-out forwards;
+    /* 1. Define the transition speed and style */
+    transition: background-position 0.5s ease-in-out, background-size 0.5s ease-in-out;
+    background-size: auto; /* Initial size */
+}
+@keyframes fadeInImage {
+    0% {
+        background-position: right 40vh top 15vh; /* Starts lower/further right */
+        opacity: 0;
+    }
+    100% {
+        background-position: right 30vh top 9vh; /* Ends at your original position */
+        opacity: 1;
+    }
+}
+/* 2. What happens when you hover over the Hero section */
+ #hero:hover { 
+    /* Moves the image slightly to the left and up for a 'floating' effect */
+     background-position: right 32vh top 7vh; 
+}
+ .hero2{
+   margin: 220px;
+   
+}
+#hero h4{
+    padding-bottom: 15px;
+}
+#hero h1{
+    color: #088178;
+}
+#hero button{
+   background-image: url(images/pic3.jpg); 
+   background-color: transparent;
+   color: red;
+   border: 0;
+   padding: 14px 30px 10px 35px;
+   font-size: 26px;
+} 
+/* #feature{
+    display: grid;
+    grid-template-columns: repeat(3,4fr);
+}
+#feature .feature-box{
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+}
+#feature .feature-box:hover{
+    box-shadow: 10px 10px 54px rgba(72, 62, 221, 0.1);
+}
+#feature .feature-box img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+#feature .feature-box h6{
+    display: inline block;
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: #088178;
+    background-color: #fddde4;
+}
+/* #feature{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+} */ 
+#feature .main-content {
+    display: grid;
+    /* This creates the grid without needing large left margins */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 40px 80px;
+}
+
+#feature .first-cover {
+    width: 180px; /* Kept your width */
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+    transition: 0.3s ease; /* Smooth hover */
+    margin: auto; /* Centers the card in the grid cell */
+    background-color: #fff;
+}
+
+#feature .first-cover:hover {
+    box-shadow: 10px 10px 54px rgba(72, 62, 221, 0.1);
+    transform: translateY(-5px); /* Adds that lively feel */
+}
+
+/* FIX STARTS HERE: The Image Box Container */
+#feature .image-box {
+    width: 100%;
+    height: 120px; /* This forces every image area to be the same height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+#feature .first-cover img {
+   max-width: 100%; 
+   max-height: 100%;
+   /* 'contain' keeps the whole image visible without stretching it */
+   object-fit: contain; 
+}
+
+#feature .first-cover h6 {
+    display: inline-block; /* Fixed: was missing the hyphen */
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: #088178;
+    background-color: #fddde4; 
+}
+
+/* Your nth-child colors are great, keep them! */
+#feature .first-cover:nth-child(2) h6 { background-color: #d1e8f2; }
+#feature .first-cover:nth-child(3) h6 { background-color: #cdd4f8; }
+#feature .first-cover:nth-child(4) h6 { background-color: #f6dbf6; }
+#feature .first-cover:nth-child(5) h6 { background-color: #fff2e5; }
+
+@media (max-width: 799px) {
+    #feature .main-content {
+        display: grid;
+        /* This forces 2 equal columns */
+        grid-template-columns: repeat(2, 1fr); 
+        
+        /* 1. REMOVE the old margin that pushed it to the side */
+        margin-left: 0; 
+        margin-right: 0;
+        
+        /* 2. CENTER the grid itself */
+        justify-content: center; 
+        justify-items: center; /* Centers the boxes inside the grid cells */
+        
+        /* 3. SET even padding so it doesn't touch the phone edges */
+        padding: 20px; 
+        gap: 15px; 
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #feature .first-cover {
+        /* This ensures the box stays centered in its half of the screen */
+        margin: 0 auto; 
+        width: 100%;
+        max-width: 160px; /* Adjust this to make the boxes feel 'Bold' or 'Small' */
+        aspect-ratio: 1 / 1;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+#product1 {
+    text-align: center;
+    /* padding: 40px 0; Changed from margin-left to padding for safety */
+}
+
+/*shop page*/
+#page-header{
+    background-image: url(images/blue.jpg);
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+#page-header h2{
+    color: #818ea0;
+}
+
+#pagination{
+    text-align: center;
+}
+#pagination a{
+    text-decoration: none;
+    background-color: #088178;
+    padding: 15px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 600;
+}
+
+/*single product section*/
+
+#productdetail .single-product-image {
+    width: 40%;
+    margin-right: 50px;
+}
+
+.small-image-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.small-img-col {
+    flex-basis: 24%;
+}
+
+.small-img-col img {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    cursor: pointer;
+}
+
+#productdetail{
+    display: flex;
+    margin-top: 20px;
+}
+
+#productdetail .single-product-detail{
+    width: 50%;
+    padding-top: 30px;
+}
+
+#productdetail .single-product-detail h4{
+    padding: 40px 0 20px 0;
+}
+
+#productdetail .single-product-detail h2{
+   font-size: 26px;
+}
+
+#productdetail .single-product-detail select{
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#productdetail .single-product-detail input{
+    width: 50px;
+    height: 47px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+#productdetail .single-product-detail input:focus{
+    outline: none;
+}
+#productdetail .single-product-detail button{
+    background-color: #088178;
+    color: #fff;
+}
+#productdetail .single-product-detail span{
+    line-height: 25px;
+}
+/* 1. Updated Grid for accuracy */
+.cover-container {
+   display: grid;
+   /* Use 1fr to share space equally. 'auto-fit' makes it responsive for mobile later! */
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 20px;
+   padding: 40px;
+}
+
+/* 2. Fix the Product Card */
+#product1 .pro {
+    width: 100%; /* Changed from 20% - Grid now handles the size */
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative; /* This keeps the cart button INSIDE the card */
+}
+
+#product1 .pro:hover {
+   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* 3. Fix Image Sizing */
+#product1 .pro img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1; /* Keeps images perfectly square */
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+#product1 .pro .des {
+   text-align: start; 
+   padding: 10px 0;
+}
+
+#product1 .pro .des span {
+    color: #606063;
+    font-size: 12px;
+}
+
+#product1 .pro .des h5 {
+    padding-top: 7px;
+    color: #1a1e1a;
+    font-size: 14px;
+}
+
+/* Star color fix */
+#product1 .pro .des i {
+    font-size: 12px;
+    color: rgb(243, 181, 25);
+}
+
+#product1 .pro .des h4 {
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+}
+
+/* 4. Fix the Cart Button positioning */
+#product1 .pro .cart {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #e8f6ea;
+    color: #088178;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 20px;
+    right: 15px; /* Aligns it perfectly to the bottom right of the card */
+}
+
+.cart:hover {
+    background-color: #088178;
+    color: #fff;
+}
+
+hr {
+    width: 50px; /* Small fixed width looks more modern */
+    height: 5px;
+    background-color: red;
+    border-radius: 20px;
+    border: none;
+    margin: 10px auto; /* Centers the HR automatically */
+}
+/* Media Query for Mobile Devices */
+@media (max-width: 477px) {
+    .cover-container {
+        /* This forces exactly 2 columns on mobile */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;    /* Smaller gap so they fit better */
+        padding: 10px; /* Less padding on the edges */
+    }
+
+    #product1 .pro {
+        padding: 8px; /* Make internal padding smaller so content fits */
+        border-radius: 15px; /* Slightly sharper corners look better when small */
+    }
+
+    #product1 .pro .des h5 {
+        font-size: 12px; /* Smaller text so it doesn't wrap awkwardly */
+    }
+
+    #product1 .pro .cart {
+        width: 30px;  /* Smaller cart button for mobile */
+        height: 30px;
+        line-height: 30px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+}
+
+/* --- Desktop Styles --- */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #E3E6F3;
+    position: sticky;
+    top: 0;
+}
+
+#navbar {
+    display: flex;
+    list-style: none;
+}
+
+#navbar li {
+    padding: 0 20px;
+}
+
+#mobile {
+    display: none; /* Hide hamburger on desktop */
+}
+
+#productdetail {
+    display: flex; /* Side-by-side on desktop */
+    margin-top: 20px;
+    padding: 40px 80px;
+}
+
+#productdetail .single-product-image {
+    width: 40%;
+    margin-right: 50px;
+}
+
+#productdetail .single-product-detail {
+    width: 50%;
+}
+
+/* ONLY affects mobile phones */
+@media (max-width: 477px) {
+    #newsletter {
+        /* 1. Reduce side padding so the bar has room to grow */
+        padding: 40px 20px !important; 
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #newsletter .newstext {
+        /* 2. Move text out of the way */
+        margin-bottom: 20px;
+    }
+
+    #newsletter .form {
+        /* 3. Force the form container to be 100% width */
+        width: 100% !important;
+        display: flex;
+    }
+
+    #newsletter input {
+        /* 4. This makes the input field stretch to the max */
+        flex: 1 !important; 
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    #newsletter button {
+        /* 5. Keep the button size standard so the bar gets the rest */
+        width: auto;
+    }
+}
+/* --- Mobile Styles (799px and below) --- */
+@media (max-width: 799px) {
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px; /* Hidden by default */
+        height: 100vh;
+        width: 300px;
+        background-color: #f9f9f9;
+        box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s ease-in-out;
+    }
+
+    #navbar.active {
+        right: 0; /* Slide in! */
+    }
+
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    #mobile i {
+        font-size: 24px;
+        padding-left: 20px;
+        cursor: pointer;
+    }
+
+    #productdetail {
+        flex-direction: column; /* Stack vertically on mobile */
+        padding: 20px;
+    }
+
+    #productdetail .single-product-image, 
+    #productdetail .single-product-detail {
+        width: 100%; /* Full width on mobile */
+    }
+}
+#banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/images/piv\ .jpg);
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+}
+#banner h4{
+    color: white;
+    font-size: 15px;
+}
+#banner h2{
+    color: #fff;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+#banner h2 span{
+    color: #ef3636;
+}
+#banner button:hover{
+    background: #088178;
+    color: #fff;
+}
+#sm-banner {
+    display: flex;
+    /* Centers the whole group on the screen */
+    justify-content: center; 
+    /* This is your precise gap—adjust this number to your liking */
+    gap: 20px; 
+    /* Padding on the sides of the screen */
+    padding: 0 20px; 
+    margin: 45px 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#sm-banner .banner-box {
+    /* This tells the box: "Grow as wide as you can to fill the space" */
+    flex: 1; 
+    
+    /* We remove the 'min-width: 580px' because it can push boxes off-screen */
+    /* Instead, we set a height and let the width be flexible */
+    height: 45vh; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+    background-image: url("/images/purple\ oic.jpg");
+    background-size: cover;
+    background-position: center;
+    
+    padding: 30px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+/* Ensure the text is readable on the wider background */
+#sm-banner h2 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #fff;
+}
+
+#sm-banner h4 {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+}
+#sm-banner span {
+    color: #fff;
+    padding-bottom: 15px;
+    font-weight: 500;
+}
+
+#sm-banner button:hover{
+    background: #088178;
+    color: #fff;
+}
+
+#banner3{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 80px;
+}
+#banner3 .banner-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url(images/pink.jpg);
+    min-width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+#banner3 .banner-box2{
+    background-image: url(images/03.png);
+}
+
+#banner3 .banner-box3{
+    background-image: url(images/02.jpg);
+}
+
+#banner3 h2{
+    color: #2116bb;
+    font-weight: 900;
+    font-size: 45px;
+}
+
+#banner3 h3{
+    color: #fff;
+    font-weight: 800;
+    font-size: 15px;
+}
+#newsletter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url("images/banner/b14.png"); /* Use a dark texture or pattern */
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color: #041e42; /* Deep navy/black background */
+    padding: 40px 80px;
+}
+
+#newsletter h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#newsletter p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #818ea0;
+}
+
+#newsletter p span {
+    color: #ffbd27; /* Gold highlight for 'special offers' */
+}
+
+#newsletter .form {
+    display: flex;
+    width: 40%;
+}
+
+#newsletter input {
+    height: 3.125rem;
+    padding: 0 1.25rem;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px 0 0 4px; /* Rounded only on the left */
+    outline: none;
+    transition: 0.3s;
+}
+
+#newsletter input:focus {
+    border: 1px solid #088178; /* Glow effect when typing */
+}
+
+#newsletter button {
+    background-color: #088178;
+    color: #fff;
+    white-space: nowrap;
+    padding: 0 20px;
+    border-radius: 0 4px 4px 0; /* Rounded only on the right */
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#newsletter button:hover {
+    background-color: #066b63;
+}
+#footer-new {
+    background-color: #fcfcfc;
+    padding: 60px 10% 20px 10%;
+    border-top: 1px solid #e1e1e1;
+    font-family: sans-serif;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+/* --- THE LOGO CONTROLLER --- */
+.logo-box {
+    margin-bottom: 20px;
+}
+
+.f-logo {
+    width: 120px !important; /* Forces the width */
+    height: auto !important;  /* Keeps it from stretching */
+    display: block;
+    mix-blend-mode: multiply; /* Makes white background transparent */
+}
+
+/* Column Styling */
+.footer-col h4 {
+    font-size: 16px;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.footer-col p {
+    font-size: 13px;
+    color: #465b52;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.footer-col a {
+    display: block;
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: #088178;
+    transform: translateX(5px); /* Lively hover effect */
+}
+
+/* Social Icons */
+.socials {
+    margin-top: 15px;
+}
+
+.socials i {
+    color: #465b52;
+    margin-right: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.socials i:hover {
+    color: #088178;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .f-logo {
+        margin: 0 auto;
+    }
+}
